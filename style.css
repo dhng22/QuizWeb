@@ -10,8 +10,17 @@ header {
     height: 80px;
     width: auto;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
 }
+div {
+    display: flex;
+    justify-content: center;
+}
+
 #course-name {
+    margin-top: auto;
+    margin-bottom: auto;
     font-weight: bold;
     display: inline-block;
     justify-content: center;
@@ -24,7 +33,9 @@ header {
 }
 .stack-circle {
     border-radius: 100%;
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2px;
     background-color: #ffee00;
     font-weight: bold;
     text-align: center;
