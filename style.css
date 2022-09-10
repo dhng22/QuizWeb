@@ -1,0 +1,38 @@
+/* TODO(you): Write the CSS to finish the assignment! */
+body {
+    font-family: Proxima Nova, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #222222;
+    margin: 0 auto;
+    width: 700px;
+}
+header {
+    height: 80px;
+    width: auto;
+    border-bottom: 1px solid #ccc;
+}
+#course-name {
+    font-weight: bold;
+    display: inline-block;
+    justify-content: center;
+    text-align: start;
+    font-family: Helvetica, sans-serif;
+    font-size: 32px;
+    color: #ee3322;
+    width: fit-content;
+    height: fit-content;
+}
+.stack-circle {
+    border-radius: 100%;
+    margin: auto;
+    background-color: #ffee00;
+    font-weight: bold;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    transform: rotate(-30deg);
+    width: 50px;
+}
+
