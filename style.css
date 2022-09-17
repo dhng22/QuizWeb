@@ -82,7 +82,7 @@ div {
     margin-bottom: 18px;
 }
 h2{
-    margin-top: 18px;
+    padding-top: 18px;
 }
 #box-start {
     display: block;
@@ -102,7 +102,7 @@ h2{
     border: 1px solid #dcdcdc;
 }
 #btn-start {
-    margin-top: 18px;
+    margin-top: 36px;
     margin-bottom: 18px;
     color: white;
     background: #2196F3;
