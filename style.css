@@ -5,6 +5,7 @@ body {
     color: #222222;
     margin: 0 auto;
     width: 700px;
+    padding-bottom: 60px;
 }
 header {
     height: 80px;
@@ -46,4 +47,110 @@ div {
     transform: rotate(-30deg);
     width: 50px;
 }
+#quiz-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/background.jpg);
+    height: 425px;
+    width: 700px;
+    background-size: cover;
+    background-position: center;
+    background-color: #cccccc;
+}
+#quiz-banner {
+    width: fit-content;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: Pangolin, "Trebuchet MS", cursive;
+    font-size: 60px;
+    color: black;
+    padding: 10px;
+    max-width: 75%;
+}
+#author {
+    font-size: 14px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.intro-text{
+    margin-bottom: 18px;
+}
+h2{
+    margin-top: 18px;
+}
+#box-start {
+    display: block;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background: #f1f1f1;
+    border: 1px solid #dcdcdc;
+}
+#box-submit {
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background: #f1f1f1;
+    border: 1px solid #dcdcdc;
+}
+#btn-start {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: white;
+    background: #2196F3;
+    padding: 18px;
+    border: 0;
+}
+#btn-start:hover {
+    background: #0d8bf2;
+}
+#btn-submit {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: white;
+    background: #4CAF50;
+    padding: 18px;
+    border: 0;
+}
+#btn-submit:hover {
+    background: #46a049;
+}
 
+#attempt-quiz {
+    display: block;
+}
+.question-text{
+    margin-bottom: 30px;
+}
+.option-selected {
+    width: 700px;
+    background: #ddd;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+}
+.option {
+    margin: 1px;
+    width: 700px;
+    background: #f1f1f1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+}
+.option:hover{
+    background: #ddd;
+}
+.answer-text{
+    margin: 15px;
+}
+label{
+    margin-left: 15px;
+}
