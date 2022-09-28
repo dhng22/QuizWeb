@@ -131,7 +131,9 @@ h2{
     margin-bottom: 30px;
 }
 .option-selected {
-    width: 700px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 670px;
     background: #ddd;
     display: inline-flex;
     align-items: center;
@@ -139,7 +141,9 @@ h2{
 }
 .option {
     margin: 1px;
-    width: 700px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 670px;
     background: #f1f1f1;
     display: inline-flex;
     align-items: center;
@@ -151,6 +155,54 @@ h2{
 .answer-text{
     margin: 15px;
 }
-label{
-    margin-left: 15px;
+.correct-answer {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 670px;
+    background: #d4edda;
+    align-items: center;
+
+}
+.option-correct {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 670px;
+    background: lightgray;
+    align-items: center;
+}
+.wrong-answer {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 670px;
+    background: #f8d7da;
+    align-items: center;
+}
+#box-result {
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background: #f1f1f1;
+    border: 1px solid #dcdcdc;
+}
+#btn-try-again {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: white;
+    background: #2196F3;
+    padding: 18px;
+    border: 0;
+}
+/*RESPONSIVE*/
+@media screen and (max-width: 700px) {
+    body {
+        max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .stack-circle {
+        display: none;
+    }
 }
