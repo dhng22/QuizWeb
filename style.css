@@ -53,7 +53,7 @@ div {
     justify-content: center;
     background-image: url(images/background.jpg);
     height: 425px;
-    width: 700px;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-color: #cccccc;
@@ -133,9 +133,8 @@ h2{
 .option-selected {
     padding-left: 15px;
     padding-right: 15px;
-    width: 670px;
+    display: flex;
     background: #ddd;
-    display: inline-flex;
     align-items: center;
     justify-content: start;
 }
@@ -143,9 +142,8 @@ h2{
     margin: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    width: 670px;
+    display: flex;
     background: #f1f1f1;
-    display: inline-flex;
     align-items: center;
     justify-content: start;
 }
@@ -153,29 +151,62 @@ h2{
     background: #ddd;
 }
 .answer-text{
+    display: inline-block;
     margin: 15px;
 }
 .correct-answer {
     padding-left: 15px;
     padding-right: 15px;
-    width: 670px;
+    display: flex;
     background: #d4edda;
     align-items: center;
-
+    position: relative;
+    justify-content: start;
+}
+.correct-answer::after {
+    color: #f1f1f1;
+    position: absolute;
+    margin-right: 10px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    content: 'Correct answer';
 }
 .option-correct {
     padding-left: 15px;
     padding-right: 15px;
-    width: 670px;
+    display: flex;
     background: lightgray;
     align-items: center;
+    position: relative;
+    justify-content: start;
+}
+.option-correct::after {
+    color: #f1f1f1;
+    position: absolute;
+    margin-right: 10px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    content: 'Correct answer';
 }
 .wrong-answer {
     padding-left: 15px;
     padding-right: 15px;
-    width: 670px;
+    display: flex;
     background: #f8d7da;
     align-items: center;
+    position: relative;
+    justify-content: start;
+}
+.wrong-answer::after {
+    color: #f1f1f1;
+    position: absolute;
+    margin-right: 10px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    content: 'Your answer';
 }
 #box-result {
     margin-top: 30px;
