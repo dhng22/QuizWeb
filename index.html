@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
   <link href="https://fonts.googleapis.com/css?family=Pangolin:400,700|Proxima+Nova" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <!--  -->
 </head>
 
@@ -56,12 +57,12 @@
         <button id="btn-start">Start the HTML quiz ❯ </button>
       </div>
     </section>
-    <section id="attempt-quiz">
+    <section class="hidden" id="attempt-quiz">
       <h2 class="question-index">Question 1 of 10</h2>
       <section id="question-field">
         <p class="question-text">What does HTLM stands for</p>
-        <div class="option-selected">
-            <input type="radio" checked>
+        <div class="option">
+            <input type="radio">
             <p class="answer-text">Hyperlinks and Text Markup Language</p>
         </div>
         <div class="option">
@@ -76,8 +77,15 @@
       <div id="box-submit">
         <button id="btn-submit">Submit your answers ❯ </button>
       </div>
+      <dialog open class="hidden" id="confirm-dialog">
+        <div>
+          <p><strong>Submit answers?</strong></p>
+          <button id="btn_confirmed">Yes</button>
+          <button id="btn_discard">No</button>
+        </div>
+      </dialog>
     </section>
-    <section id="review-quiz">
+    <section class="hidden" id="review-quiz">
       <h2 class="question-index">Question 1 of 10</h2>
       <p class="question-text">What does HTLM stands for</p>
       <div class="correct-answer">

@@ -131,6 +131,7 @@ h2{
     margin-bottom: 30px;
 }
 .option-selected {
+    margin: 1px;
     padding-left: 15px;
     padding-right: 15px;
     display: flex;
@@ -225,10 +226,13 @@ h2{
     padding: 18px;
     border: 0;
 }
+.hidden{
+    display: none !important;
+}
 /*RESPONSIVE*/
 @media screen and (max-width: 700px) {
     body {
-        max-width: 95%;
+        max-width: 95% !important;
     }
 }
 
@@ -236,4 +240,22 @@ h2{
     .stack-circle {
         display: none;
     }
+}
+#confirm-dialog div {
+    align-items: center;
+    padding: 12px;
+    border-radius: 30px;
+    background-color: lightgray;
+    display: flex;
+}
+#confirm-dialog {
+    position: absolute;
+
+    display: flex;
+    border: 0 white;
+    justify-content: center;
+    align-items: center;
+}
+#confirm-dialog button{
+    margin: 4px;
 }
