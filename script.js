@@ -161,7 +161,9 @@ function onRadioButtonChange(event) {
 
 function onOptionChange(event) {
     const clickedOpt = event.target.querySelector("input");
-    clickedOpt.click();
+    if (clickedOpt !== null) {
+        clickedOpt.click();
+    }
 }
 
 btn_start.addEventListener("click", toAttemptQuiz);
