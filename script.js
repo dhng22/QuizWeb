@@ -21,6 +21,7 @@ function toAttemptQuiz() {
 
     // fetch questions
     fetch("https://wpr-quiz-api.herokuapp.com/attempts", {method: 'post'}).then((response) => {
+        console.log(response)
         return (response.json())
     }).then(data => {
         questionLen = data.questions.length;
@@ -60,7 +61,6 @@ function showConfirmDialog() {
 }
 
 function toReviewScreen() {
-    const dataToPost = {};
     const userAnswer = {};
 
     // query user answer and assign to `dataToPost`
@@ -77,16 +77,17 @@ function toReviewScreen() {
             userAnswer[quesId] = parseInt(ansList, 10);
         }
     });
-    dataToPost["userAnswers"] = userAnswer;
 
     // submit data
     fetch("https://wpr-quiz-api.herokuapp.com/attempts/" + question_id + "/submit", {
-        method: "post",
-        body: JSON.stringify(dataToPost)
+        method: "POST",
+        body: JSON.stringify({userAnswers: userAnswer}),
+        headers: {"Content-Type": "application/json"}
     }).then(response => {
         return response.json();
     }).then(data => {
         // populate answers
+        console.log(data);
         populateCorrectAns(data, userAnswer);
 
         // append review box
@@ -103,6 +104,7 @@ function toReviewScreen() {
         // apply score and score-text
         reviewBox.querySelector("#score").textContent = data.score.toString() + "/" + questionLen;
         reviewBox.querySelector("#score-text").textContent = data.scoreText;
+        reviewBox.querySelector("strong").textContent = (data.score/parseInt(questionLen)*100).toString()+"%"
 
         document.querySelector("#btn-try-again").addEventListener("click", toIntroductionScreen);
     });
