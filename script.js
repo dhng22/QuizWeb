@@ -14,15 +14,16 @@ function toIntroductionScreen() {
 
     intro_screen.classList.toggle("hidden");
     review_screen.classList.toggle("hidden");
-    main_body.scrollIntoView(true)
+    main_body.scrollIntoView({
+        behavior: "smooth"
+    })
 }
 
 function toAttemptQuiz() {
 
     // fetch questions
-    fetch("https://wpr-quiz-api.herokuapp.com/attempts", {method: 'post'}).then((response) => {
-        console.log(response)
-        return (response.json())
+    fetch("http://localhost:3000/attempts/", {method: 'post'}).then((response) => {
+        return (response.json());
     }).then(data => {
         questionLen = data.questions.length;
         question_id = data._id;
@@ -51,11 +52,13 @@ function toAttemptQuiz() {
 
     intro_screen.classList.toggle("hidden");
     attempt_screen.classList.toggle("hidden");
-    main_body.scrollIntoView(true)
+    main_body.scrollIntoView({
+        behavior: "smooth"
+    })
 }
 
 function showConfirmDialog() {
-    if (confirm("Are you sure?")) {
+    if (confirm("Are you sure want to finish this quiz?")) {
         toReviewScreen();
     }
 }
@@ -79,15 +82,14 @@ function toReviewScreen() {
     });
 
     // submit data
-    fetch("https://wpr-quiz-api.herokuapp.com/attempts/" + question_id + "/submit", {
-        method: "POST",
+    fetch("http://localhost:3000/attempts/" + question_id + "/submit", {
+        method: "post",
         body: JSON.stringify({userAnswers: userAnswer}),
         headers: {"Content-Type": "application/json"}
     }).then(response => {
         return response.json();
     }).then(data => {
         // populate answers
-        console.log(data);
         populateCorrectAns(data, userAnswer);
 
         // append review box
@@ -104,11 +106,15 @@ function toReviewScreen() {
         // apply score and score-text
         reviewBox.querySelector("#score").textContent = data.score.toString() + "/" + questionLen;
         reviewBox.querySelector("#score-text").textContent = data.scoreText;
-        reviewBox.querySelector("strong").textContent = (data.score/parseInt(questionLen)*100).toString()+"%"
+        reviewBox.querySelector("strong").textContent = (data.score / parseInt(questionLen) * 100).toString() + "%"
 
         document.querySelector("#btn-try-again").addEventListener("click", toIntroductionScreen);
     });
-
+    attempt_screen.classList.toggle("hidden");
+    review_screen.classList.toggle("hidden");
+    main_body.scrollIntoView({
+        behavior: "smooth"
+    })
     // set up for review-screen
     function populateCorrectAns(data, userAnswers) {
         const correctAnswer = data.correctAnswers;
@@ -140,13 +146,10 @@ function toReviewScreen() {
 
     }
 
-    attempt_screen.classList.toggle("hidden");
-    review_screen.classList.toggle("hidden");
-    main_body.scrollIntoView(true)
 }
 
 
-function onRadioButtonChange(event) {
+function onRadioButtonChange(event)     {
     const changedButton = event.target;
     const otherButtons = changedButton.parentElement.parentElement.querySelectorAll("input");
 
